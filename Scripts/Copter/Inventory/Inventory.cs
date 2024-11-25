@@ -9,12 +9,9 @@ public class Inventory : MonoBehaviour
 
     public void AddStar(Star star)
     {
-        if (star.CanCollect)
-        {
-            star.Deactivate();
-            StarCount++;
-            StarCountChanged?.Invoke(StarCount);
-        }
+        star.gameObject.SetActive(false);
+        StarCount++;
+        StarCountChanged?.Invoke(StarCount);
     }
 
     public void Reset()

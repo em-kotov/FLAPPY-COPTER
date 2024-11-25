@@ -6,7 +6,7 @@ public class CollisionRegister : MonoBehaviour
 {
     public event Action PipeFound;
     public event Action<Star> StarFound;
-    public event Action<ZoneController> NextZoneControllerFound;
+    public event Action<ZoneController, float> NextZoneControllerFound;
 
     private void Awake()
     {
@@ -24,7 +24,8 @@ public class CollisionRegister : MonoBehaviour
                 StarFound?.Invoke(interactable as Star);
 
             if (interactable is ZoneController)
-                NextZoneControllerFound?.Invoke(interactable as ZoneController);
+                NextZoneControllerFound?.Invoke(interactable as ZoneController,
+                                                    transform.position.x);
         }
     }
 }

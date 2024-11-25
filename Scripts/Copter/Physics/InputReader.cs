@@ -10,8 +10,6 @@ public class InputReader : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(JumpKey))
-        {
             JumpKeyPressed?.Invoke();
-        }
     }
 }

@@ -40,6 +40,7 @@ public class Mover : MonoBehaviour
     public void Reset()
     {
         transform.position = _startPosition;
+        Jump();
     }
 
     private void RotateOverTime()
@@ -47,5 +48,4 @@ public class Mover : MonoBehaviour
         transform.rotation = Quaternion.Lerp(transform.rotation,
                                             _minRotation, _rotationSpeed * Time.deltaTime);
     }
-
 }
